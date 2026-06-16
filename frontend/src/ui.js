@@ -1,7 +1,7 @@
 // ui.js
 // Displays the drag-and-drop UI
 // --------------------------------------------------
-
+import { ApiCallerNode, ConditionalNode, DataTransformNode, FileUploadNode, WebhookTriggerNode } from './nodes/extraNodes';
 import { useState, useRef, useCallback } from 'react';
 import ReactFlow, { Controls, Background, MiniMap } from 'reactflow';
 import { useStore } from './store';
@@ -20,6 +20,11 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
+  apiCaller: ApiCallerNode,
+  conditional: ConditionalNode,
+  dataTransform: DataTransformNode,
+  fileUpload: FileUploadNode,
+  webhookTrigger: WebhookTriggerNode,
 };
 
 const selector = (state) => ({

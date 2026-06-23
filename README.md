@@ -58,4 +58,14 @@ Improvements Made
 - Styled form controls and the Submit button
 - Ensured responsive design at 1280px and larger screen sizes
 
----
+## MGH-204 — Dynamic Text Node Behaviour
+- Text node auto-resizes (width + height) as user types
+- Minimum size: 200x80 px
+- Maximum width: 400px (wraps text after that)
+- Parses `{{ variableName }}` patterns from text using regex
+- Automatically creates a labelled Handle on left side for each unique variable
+- Handles appear in the order variables first appear in text
+- Deleting a variable from text removes its handle automatically
+- Invalid tokens (e.g. `{{ 123bad }}`, `{{ has space }}`) are ignored — no handle created
+- Each handle has a stable unique ID so existing connections persist across re-renders
+- Removing one variable does not disconnect or break edges connected to other variables

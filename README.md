@@ -59,6 +59,7 @@ Improvements Made
 - Ensured responsive design at 1280px and larger screen sizes
 
 ## MGH-204 — Dynamic Text Node Behaviour
+
 - Text node auto-resizes (width + height) as user types
 - Minimum size: 200x80 px
 - Maximum width: 400px (wraps text after that)
@@ -69,3 +70,13 @@ Improvements Made
 - Invalid tokens (e.g. `{{ 123bad }}`, `{{ has space }}`) are ignored — no handle created
 - Each handle has a stable unique ID so existing connections persist across re-renders
 - Removing one variable does not disconnect or break edges connected to other variables
+
+## MGH-205 — Backend Pipeline Parse API
+
+- Connected the frontend Submit button to the FastAPI backend using an HTTP POST request.
+- Sent the current pipeline nodes and edges as JSON to the /pipelines/parse endpoint.
+- Counted the total number of nodes and edges in the pipeline.
+- Determined whether the pipeline is a valid Directed Acyclic Graph (DAG).
+- Displayed the node count, edge count, and DAG status in a user-friendly alert.
+- Handled network errors and invalid requests gracefully.
+- Configured CORS to allow communication between the React frontend and FastAPI backend during local development.
